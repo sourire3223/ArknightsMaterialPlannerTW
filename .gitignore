@@ -1,6 +1,6 @@
 ArkMaterialPlanning.py
 test*
-raw/*
+data/raw/*
 __pycache__
 .ipynb_checkpoint
 .gitignore

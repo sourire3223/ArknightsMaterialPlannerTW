@@ -38,7 +38,7 @@ class DataCollector:
         self.LAST_OPERATOR_TIME = self.operator_order.pop('LAST_OPERATOR_TIME')
    
 
-    def generate_future_activity_material(self, 
+    def generate_future_activity_materials(self, 
                 current_event_name: str = "玛莉娅・临光・复刻",
                 sanity_per_day: int = 310,
                 discount_rate_per_week: float = 0.95) -> dict[str, float]: # farm
@@ -47,14 +47,14 @@ class DataCollector:
         pass
     
     
-    def _generate_future_activity_material_default(self, 
+    def _generate_future_activity_materials_default(self, 
                 current_event_name: str = "玛莉娅・临光・复刻",
                 sanity_per_day: int = 310,
                 discount_rate_per_week: float = 0.95) -> dict[str, float]: # farm
         
         ### event_list -> stage_matrix
         current_time = self.event_list[current_event_name][0]
-        BLUE_MATERIAL = {"全新装置", "RMA70-12", "研磨石", "凝胶", "炽合金", "酮凝集组", "轻锰矿", "异铁组", "扭转醇",
+        BLUE_MATERIALS = {"全新装置", "RMA70-12", "研磨石", "凝胶", "炽合金", "酮凝集组", "轻锰矿", "异铁组", "扭转醇",
                             "聚酸酯组", "糖组", "固源岩组", "晶体元件", "化合切削液", "半自然溶剂"}
 
         # activity farm info in penguin-stats
@@ -89,34 +89,34 @@ class DataCollector:
                             activity_record[zone]["stage"][k] = {
                                 "times": times,
                                 "drop": {item: times*content["quantity"]/content["times"] 
-                                         for item, content in v["drop_info"].items() if item in BLUE_MATERIAL},
+                                         for item, content in v["drop_info"].items() if item in BLUE_MATERIALS},
                             }
         
         # material got in activities
-        activity_material = dict()
+        activity_materials = dict()
         decay_rate_per_week = 0.95
         for k, v in activity_record.items():
             week = (v["start_date"] - current_time) / 86400 / 7
             discount = decay_rate_per_week ** week
             for stage, info in v["stage"].items():
                 for item, quantity in info["drop"].items():
-                    if item in activity_material:
-                        activity_material[item] += quantity*discount
+                    if item in activity_materials:
+                        activity_materials[item] += quantity*discount
                     else:
-                        activity_material[item] = quantity*discount
+                        activity_materials[item] = quantity*discount
         
         self.activity_record = activity_record
-        self.activity_material = activity_material
-        return activity_material
+        self.activity_materials = activity_materials
+        return activity_materials
     
     
-    def generate_required_material(self, eku_map = dict(), url = "", path = None): # check list of operators elite (2)/ skill (6+3) / uniequip (3)
-        # TODO: calculate precise required material
+    def generate_required_materials(self, eku_map = dict(), url = "", path = None): # check list of operators elite (2)/ skill (6+3) / uniequip (3)
+        # TODO: calculate precise required materials
         pass
     
     
-    def _generate_required_material_default(self, discount_rate_per_week = 0.98):
-        required_material = dict()
+    def _generate_required_materials_default(self, discount_rate_per_week = 0.98):
+        required_materials = dict()
       
 
         not_in_cultivate_map = list()
@@ -133,29 +133,29 @@ class DataCollector:
             for items in info["evolve"]: # 精1 ~ 2
                 for k, v in items.items():
                     items[k] = v * discount
-                required_material = DataCollector.add(required_material, items)
+                required_materials = DataCollector.add(required_materials, items)
 
             for items in info["skills"]["normal"]: # 技1 ~ 7
                 for k, v in items.items():
                     items[k] = v * discount
-                required_material = DataCollector.add(required_material, items)
+                required_materials = DataCollector.add(required_materials, items)
 
             for skill in info["skills"]["elite"]: # 一 ~ 三技
                 for items in skill["cost"]: # 專1 ~ 3
                     for k, v in items.items():
                         items[k] = v * discount
-                    required_material = DataCollector.add(required_material, items)
+                    required_materials = DataCollector.add(required_materials, items)
 
             for xy in info["uniequip"]: # 模組 X,Y
                 for items in xy["cost"]: # 1 ~ 3級
                     for k, v in items.items():
                         items[k] = v * discount
-                    required_material = DataCollector.add(required_material, items)
+                    required_materials = DataCollector.add(required_materials, items)
         print(", ".join(not_in_cultivate_map), "are not in cultivate_map.")
         
         
-        self.required_material = required_material
-        return required_material
+        self.required_materials = required_materials
+        return required_materials
         
         
     def calculate_zone_value(self, values):
