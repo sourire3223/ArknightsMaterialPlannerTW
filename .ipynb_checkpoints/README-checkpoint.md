@@ -1,0 +1,2 @@
+# ArknightsMaterialPlannerTW
+Material Planner for TW server (Tranditional Chinese server). The data are collected from [penguin-stats](https://penguin-stats.io/)'s api. The strategies are based on [ArkPlanner](https://github.com/penguin-statistics/ArkPlanner) and [yituliu](https://ark.yituliu.site/).
