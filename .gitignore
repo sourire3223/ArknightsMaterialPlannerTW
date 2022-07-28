@@ -2,7 +2,7 @@ ArkMaterialPlanning.py
 test*
 data/raw/*
 __pycache__
-deprecated
+# deprecated
 .ipynb_checkpoints
 .gitignore
 .DS_Store
