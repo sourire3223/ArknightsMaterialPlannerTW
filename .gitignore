@@ -1,7 +1,7 @@
 ArkMaterialPlanning.py
 test*
-raw/*
+data/raw/*
 __pycache__
-.ipynb_checkpoint
+.ipynb_checkpoints
 .gitignore
 .DS_store
