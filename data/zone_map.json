@@ -21,6 +21,10 @@
   "第九章": "main_9",
   "main_10": "第十章",
   "第十章": "main_10",
+  "act12sre": "多索雷斯假日",
+  "多索雷斯假日": "act12side",
+  "act11mini": "未尽篇章",
+  "未尽篇章": "act11mini",
   "act19side": "绿野幻梦",
   "绿野幻梦": "act19side",
   "act18side": "尘影余音",
@@ -50,7 +54,6 @@
   "act7sre": "玛莉娅・临光・复刻",
   "玛莉娅・临光・复刻": "act7sre",
   "act12side": "多索雷斯假日",
-  "多索雷斯假日": "act12side",
   "act6sre": "密林悍将归来・复刻",
   "密林悍将归来・复刻": "act6sre",
   "act8mini": "如我所见",
@@ -130,5 +133,7 @@
   "permanent_sidestory_7": "孤岛风云・永久",
   "孤岛风云・永久": "permanent_sidestory_7",
   "permanent_sidestory_8": "画中人・永久",
-  "画中人・永久": "permanent_sidestory_8"
+  "画中人・永久": "permanent_sidestory_8",
+  "permanent_sidestory_9": "多索雷斯假日・永久",
+  "多索雷斯假日・永久": "permanent_sidestory_9"
 }

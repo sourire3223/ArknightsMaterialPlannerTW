@@ -2522,55 +2522,64 @@
     "DH-1"
   ],
   "DH-1": [
-    "act12side_01"
+    "act12side_01",
+    "act12side_01_rep"
   ],
   "act12side_02": [
     "DH-2"
   ],
   "DH-2": [
-    "act12side_02"
+    "act12side_02",
+    "act12side_02_rep"
   ],
   "act12side_03": [
     "DH-3"
   ],
   "DH-3": [
-    "act12side_03"
+    "act12side_03",
+    "act12side_03_rep"
   ],
   "act12side_04": [
     "DH-4"
   ],
   "DH-4": [
-    "act12side_04"
+    "act12side_04",
+    "act12side_04_rep"
   ],
   "act12side_05": [
     "DH-5"
   ],
   "DH-5": [
-    "act12side_05"
+    "act12side_05",
+    "act12side_05_rep"
   ],
   "act12side_06": [
     "DH-6"
   ],
   "DH-6": [
-    "act12side_06"
+    "act12side_06",
+    "act12side_06_rep"
   ],
   "act12side_07": [
     "DH-7"
   ],
   "DH-7": [
-    "act12side_07"
+    "act12side_07",
+    "act12side_07_rep"
   ],
   "act12side_08": [
     "DH-8"
   ],
   "DH-8": [
-    "act12side_08"
+    "act12side_08",
+    "act12side_08_rep"
   ],
   "act12side_09": [
     "DH-9"
   ],
   "DH-9": [
-    "act12side_09"
+    "act12side_09",
+    "act12side_09_rep"
   ],
   "act12d0_01_perm": [
     "RI-1"
@@ -3616,5 +3625,80 @@
   ],
   "DV-8": [
     "act19side_08"
+  ],
+  "act11mini_01": [
+    "TC-1"
+  ],
+  "TC-1": [
+    "act11mini_01"
+  ],
+  "act11mini_02": [
+    "TC-2"
+  ],
+  "TC-2": [
+    "act11mini_02"
+  ],
+  "act11mini_03": [
+    "TC-3"
+  ],
+  "TC-3": [
+    "act11mini_03"
+  ],
+  "act11mini_04": [
+    "TC-4"
+  ],
+  "TC-4": [
+    "act11mini_04"
+  ],
+  "act11mini_05": [
+    "TC-5"
+  ],
+  "TC-5": [
+    "act11mini_05"
+  ],
+  "act11mini_06": [
+    "TC-6"
+  ],
+  "TC-6": [
+    "act11mini_06"
+  ],
+  "act11mini_07": [
+    "TC-7"
+  ],
+  "TC-7": [
+    "act11mini_07"
+  ],
+  "act11mini_08": [
+    "TC-8"
+  ],
+  "TC-8": [
+    "act11mini_08"
+  ],
+  "act12side_01_rep": [
+    "DH-1"
+  ],
+  "act12side_02_rep": [
+    "DH-2"
+  ],
+  "act12side_03_rep": [
+    "DH-3"
+  ],
+  "act12side_04_rep": [
+    "DH-4"
+  ],
+  "act12side_05_rep": [
+    "DH-5"
+  ],
+  "act12side_06_rep": [
+    "DH-6"
+  ],
+  "act12side_07_rep": [
+    "DH-7"
+  ],
+  "act12side_08_rep": [
+    "DH-8"
+  ],
+  "act12side_09_rep": [
+    "DH-9"
   ]
 }

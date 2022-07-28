@@ -37,12 +37,27 @@ class DataCollector:
         self.operator_order = self.load_operator_order(update)
         self.LAST_OPERATOR_TIME = self.operator_order.pop('LAST_OPERATOR_TIME')
    
+    def update_all(self):
+        self.item_map = self.load_item_map(True)
+        self.tage_map = self.load_stage_map(True)
+        self.operator_map = self.load_operator_map(True)
+        self.skill_map = self.load_skill_map(True)
+        self.uniequip_map = self.load_uniequip_map(True)
+        self.cultivate_map = self.load_cultivate_map(True)
+        self.event_list = self.load_event_list(True)
+        self.zone_map = self.load_zone_map(True)
+        self.zone_matrix = self.load_zone_matrix(True)
+        
+        self.operator_order = self.load_operator_order(True)
+        self.LAST_OPERATOR_TIME = self.operator_order.pop('LAST_OPERATOR_TIME')
 
     def generate_future_activity_materials(self, 
                 current_event_name: str = "玛莉娅・临光・复刻",
                 sanity_per_day: int = 310,
                 discount_rate_per_week: float = 0.95) -> dict[str, float]: # farm
+        
         # TODO: 算cp值 -> 刷 x 體在最多的那關，得到素材（期望值） -> 算cp值 -> 刷 x 體在最多的那關，得到素材（期望值）-> ... -> 沒體力
+        # TODO: 重設 linprog 參數計算
         # TODO: 算cp值 =  MaterialPlanner.value + self.zone_matrix
         pass
     
@@ -189,19 +204,7 @@ class DataCollector:
         return zone_value
         
         
-    def update_all(self):
-        self.item_map = self.load_item_map(True)
-        self.tage_map = self.load_stage_map(True)
-        self.operator_map = self.load_operator_map(True)
-        self.skill_map = self.load_skill_map(True)
-        self.uniequip_map = self.load_uniequip_map(True)
-        self.cultivate_map = self.load_cultivate_map(True)
-        self.event_list = self.load_event_list(True)
-        self.zone_map = self.load_zone_map(True)
-        self.zone_matrix = self.load_zone_matrix(True)
-        
-        self.operator_order = self.load_operator_order(True)
-        self.LAST_OPERATOR_TIME = self.operator_order.pop('LAST_OPERATOR_TIME')
+
         
     @property
     def zone_value_filtered(cp = 0.99):
@@ -677,7 +680,7 @@ class DataCollector:
             # raw data        
             with open("./data/raw/matrix.json", 'w', encoding="utf-8") as fw:
                 json.dump(txt, fw, indent=2, ensure_ascii=False)  
-            logger.info(f"matrix.json is successfully downloaded from {URL_MATRIX}.")
+            logger.info(f"matrix.json is successfully downloaded from {URL_MATRIX_PRIVATE}.")
 
             # zone_matrix
             with open("./data/zone_matrix.json", 'w', encoding="utf-8") as fw:
