@@ -1,0 +1,3122 @@
+[
+  {
+    "start": 1556676000000,
+    "end": null,
+    "label_i18n": {
+      "en": "Game Released",
+      "ja": "ゲーム稼働",
+      "ko": "Game Released",
+      "zh": "开服"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1579190400000,
+    "end": null,
+    "label_i18n": {
+      "en": "Game Released",
+      "ja": "ゲーム稼働",
+      "ko": "Game Released",
+      "zh": "开服"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1579140000000,
+    "end": null,
+    "label_i18n": {
+      "en": "Game Released",
+      "ja": "ゲーム稼働",
+      "ko": "Game Released",
+      "zh": "开服"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1562659200000,
+    "end": null,
+    "label_i18n": {
+      "en": "Chapter 5 Released",
+      "ja": "Chapter 5 Released",
+      "ko": "Chapter 5 Released",
+      "zh": "第五章开放"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1582736400000,
+    "end": null,
+    "label_i18n": {
+      "en": "Chapter 5 Released",
+      "ja": "Chapter 5 Released",
+      "ko": "Chapter 5 Released",
+      "zh": "第五章开放"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1582700400000,
+    "end": null,
+    "label_i18n": {
+      "en": "Chapter 5 Released",
+      "ja": "Chapter 5 Released",
+      "ko": "Chapter 5 Released",
+      "zh": "第五章开放"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1577174400000,
+    "end": null,
+    "label_i18n": {
+      "en": "Chapter 6 Released",
+      "ja": "Chapter 6 Released",
+      "ko": "Chapter 6 Released",
+      "zh": "第六章开放"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1588320000000,
+    "end": null,
+    "label_i18n": {
+      "en": "Chapter 7 Released",
+      "ja": "Chapter 7 Released",
+      "ko": "Chapter 7 Released",
+      "zh": "第七章开放"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1559181600000,
+    "end": 1560369600000,
+    "label_i18n": {
+      "en": "The Knight & The Hunters",
+      "ja": "騎兵と狩人",
+      "ko": "기병과 사냥꾼",
+      "zh": "骑兵与猎人"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1580922000000,
+    "end": 1582110000000,
+    "label_i18n": {
+      "en": "The Knight & The Hunters",
+      "ja": "騎兵と狩人",
+      "ko": "기병과 사냥꾼",
+      "zh": "骑兵与猎人"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1580864400000,
+    "end": 1582052400000,
+    "label_i18n": {
+      "en": "The Knight & The Hunters",
+      "ja": "騎兵と狩人",
+      "ko": "기병과 사냥꾼",
+      "zh": "骑兵与猎人"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1566892800000,
+    "end": 1568059200000,
+    "label_i18n": {
+      "en": "Heart of Surging Flame",
+      "ja": "青く燃ゆる心",
+      "ko": "파란 불꽃의 마음",
+      "zh": "火蓝之心"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1588179600000,
+    "end": 1589367600000,
+    "label_i18n": {
+      "en": "Heart of Surging Flame",
+      "ja": "青く燃ゆる心",
+      "ko": "파란 불꽃의 마음",
+      "zh": "火蓝之心"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1588143600000,
+    "end": 1589310000000,
+    "label_i18n": {
+      "en": "Heart of Surging Flame",
+      "ja": "青く燃ゆる心",
+      "ko": "파란 불꽃의 마음",
+      "zh": "火蓝之心"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1571126400000,
+    "end": 1571688000000,
+    "label_i18n": {
+      "en": "Operational Intelligence",
+      "ja": "戦地の逸話",
+      "ko": "전장의 비화",
+      "zh": "战地秘闻"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1585155600000,
+    "end": 1586343600000,
+    "label_i18n": {
+      "en": "Operational Intelligence",
+      "ja": "戦地の逸話",
+      "ko": "전장의 비화",
+      "zh": "战地秘闻"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1585098000000,
+    "end": 1586286000000,
+    "label_i18n": {
+      "en": "Operational Intelligence",
+      "ja": "戦地の逸話",
+      "ko": "전장의 비화",
+      "zh": "战地秘闻"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1574150400000,
+    "end": 1575316800000,
+    "label_i18n": {
+      "en": "Code of Brawl",
+      "ja": "喧騒の掟",
+      "ko": "소란의 법칙",
+      "zh": "喧闹法则"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1578513600000,
+    "end": 1579118400000,
+    "label_i18n": {
+      "en": "Ancient Forge",
+      "ja": "洪炉示歳",
+      "ko": "에인션트 포지",
+      "zh": "洪炉示岁"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1582617600000,
+    "end": 1583179200000,
+    "label_i18n": {
+      "en": "Stories of Afternoon",
+      "ja": "午後の逸話",
+      "ko": "오후의 일화",
+      "zh": "午间逸话"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1587456000000,
+    "end": 1589486400000,
+    "label_i18n": {
+      "en": "Darknights Memoir",
+      "ja": "闇夜に生きる",
+      "ko": "흑야의 회고록",
+      "zh": "生于黑夜"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1577174400000,
+    "end": 1578340800000,
+    "label_i18n": {
+      "en": "Chapter 6 Release Event",
+      "ja": "Chapter 6 Release Event",
+      "ko": "Chapter 6 Release Event",
+      "zh": "第六章开放限时掉落"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1581105600000,
+    "end": 1582315200000,
+    "label_i18n": {
+      "en": "Half Year Anniversary Special Event",
+      "ja": "Half Year Anniversary Special Event",
+      "ko": "Half Year Anniversary Special Event",
+      "zh": "岁过华灯限时掉落"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1589529600000,
+    "end": 1590696000000,
+    "label_i18n": {
+      "en": "1st Anniversary Limited-Time Special Drop",
+      "ja": "1周年記念物資回収キャンペーン",
+      "ko": "1주년 기념 기간 한정 드랍",
+      "zh": "一周年庆典限时掉落"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1590598800000,
+    "end": 1591786800000,
+    "label_i18n": {
+      "en": "Code of Brawl",
+      "ja": "喧騒の掟",
+      "ko": "소란의 법칙",
+      "zh": "喧闹法则"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1590562800000,
+    "end": 1591729200000,
+    "label_i18n": {
+      "en": "Code of Brawl",
+      "ja": "喧騒の掟",
+      "ko": "소란의 법칙",
+      "zh": "喧闹法则"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1592467200000,
+    "end": 1593028800000,
+    "label_i18n": {
+      "en": "Children of Ursus",
+      "ja": "ウルサスの子供たち",
+      "ko": "우르수스의 아이들",
+      "zh": "乌萨斯的孩子们"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1593536400000,
+    "end": null,
+    "label_i18n": {
+      "en": "Chapter 6 Released",
+      "ja": "Chapter 6 Released",
+      "ko": "Chapter 6 Released",
+      "zh": "第六章开放"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1593500400000,
+    "end": null,
+    "label_i18n": {
+      "en": "Chapter 6 Released",
+      "ja": "Chapter 6 Released",
+      "ko": "Chapter 6 Released",
+      "zh": "第六章开放"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1593536400000,
+    "end": 1594724400000,
+    "label_i18n": {
+      "en": "Chapter 6 Release Event",
+      "ja": "Chapter 6 Release Event",
+      "ko": "Chapter 6 Release Event",
+      "zh": "第六章开放限时掉落"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1593500400000,
+    "end": 1594666800000,
+    "label_i18n": {
+      "en": "Chapter 6 Release Event",
+      "ja": "Chapter 6 Release Event",
+      "ko": "Chapter 6 Release Event",
+      "zh": "第六章开放限时掉落"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1594281600000,
+    "end": 1595448000000,
+    "label_i18n": {
+      "en": "Twilight of Wolumonde",
+      "ja": "ウォルモンドの薄暮",
+      "ko": "월루몽드의 황혼",
+      "zh": "沃伦姆德的薄暮"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1596042000000,
+    "end": 1597230000000,
+    "label_i18n": {
+      "en": "Ancient Forge",
+      "ja": "洪炉示歳",
+      "ko": "에인션트 포지",
+      "zh": "洪炉示岁"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1596006000000,
+    "end": 1597172400000,
+    "label_i18n": {
+      "en": "Ancient Forge",
+      "ja": "洪炉示歳",
+      "ko": "에인션트 포지",
+      "zh": "洪炉示岁"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1597230000000,
+    "end": 1598439600000,
+    "label_i18n": {
+      "en": "Half Year Anniversary Special Event",
+      "ja": "Half Year Anniversary Special Event",
+      "ko": "Half Year Anniversary Special Event",
+      "zh": "岁过华灯限时掉落"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1597172400000,
+    "end": 1598382000000,
+    "label_i18n": {
+      "en": "Half Year Anniversary Special Event",
+      "ja": "Half Year Anniversary Special Event",
+      "ko": "Half Year Anniversary Special Event",
+      "zh": "岁过华灯限时掉落"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1598342400000,
+    "end": 1599508800000,
+    "label_i18n": {
+      "en": "The Great Chief Returns",
+      "ja": "帰還！密林の長",
+      "ko": "위대한 족장 가비알: 리턴즈",
+      "zh": "密林悍将归来"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1598461200000,
+    "end": 1599649200000,
+    "label_i18n": {
+      "en": "Stories of Afternoon",
+      "ja": "午後の逸話",
+      "ko": "오후의 일화",
+      "zh": "午间逸话"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1598425200000,
+    "end": 1599591600000,
+    "label_i18n": {
+      "en": "Stories of Afternoon",
+      "ja": "午後の逸話",
+      "ko": "오후의 일화",
+      "zh": "午间逸话"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1600934400000,
+    "end": 1601496000000,
+    "label_i18n": {
+      "en": "Rewinding Breeze",
+      "ja": "在りし日の風を求めて",
+      "ko": "리와인딩 브리즈",
+      "zh": "踏寻往昔之风"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1601398800000,
+    "end": 1602241200000,
+    "label_i18n": {
+      "en": "Children of Ursus",
+      "ja": "ウルサスの子供たち",
+      "ko": "우르수스의 아이들",
+      "zh": "乌萨斯的孩子们"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1601362800000,
+    "end": 1602183600000,
+    "label_i18n": {
+      "en": "Children of Ursus",
+      "ja": "ウルサスの子供たち",
+      "ko": "우르수스의 아이들",
+      "zh": "乌萨斯的孩子们"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1601539200000,
+    "end": 1602360000000,
+    "label_i18n": {
+      "en": "The Knight & The Hunters - Rerun",
+      "ja": "騎兵と狩人・復刻",
+      "ko": "기병과 사냥꾼 재개방",
+      "zh": "骑兵与猎人・复刻"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1602748800000,
+    "end": 1603915200000,
+    "label_i18n": {
+      "en": "Maria Nearl",
+      "ja": "マリア・ニアール",
+      "ko": "마리아 니어",
+      "zh": "玛莉娅・临光"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1603904400000,
+    "end": 1605092400000,
+    "label_i18n": {
+      "en": "Twilight of Wolumonde",
+      "ja": "ウォルモンドの薄暮",
+      "ko": "월루몽드의 황혼",
+      "zh": "沃伦姆德的薄暮"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1603868400000,
+    "end": 1605034800000,
+    "label_i18n": {
+      "en": "Twilight of Wolumonde",
+      "ja": "ウォルモンドの薄暮",
+      "ko": "월루몽드의 황혼",
+      "zh": "沃伦姆德的薄暮"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1604217600000,
+    "end": null,
+    "label_i18n": {
+      "en": "Chapter 8 Released",
+      "ja": "Chapter 8 Released",
+      "ko": "Chapter 8 Released",
+      "zh": "第八章开放"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1606410000000,
+    "end": 1607252400000,
+    "label_i18n": {
+      "en": "The Knight & The Hunters - Rerun",
+      "ja": "騎兵と狩人・復刻",
+      "ko": "기병과 사냥꾼 재개방",
+      "zh": "骑兵与猎人・复刻"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1606374000000,
+    "end": 1607194800000,
+    "label_i18n": {
+      "en": "The Knight & The Hunters - Rerun",
+      "ja": "騎兵と狩人・復刻",
+      "ko": "기병과 사냥꾼 재개방",
+      "zh": "骑兵与猎人・复刻"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1606809600000,
+    "end": 1607630400000,
+    "label_i18n": {
+      "en": "Code of Brawl - Rerun",
+      "ja": "喧騒の掟・復刻",
+      "ko": "소란의 법칙 재개방",
+      "zh": "喧闹法则・复刻"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1607619600000,
+    "end": 1609412400000,
+    "label_i18n": {
+      "en": "Darknights Memoir",
+      "ja": "闇夜に生きる",
+      "ko": "흑야의 회고록",
+      "zh": "生于黑夜"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1607583600000,
+    "end": 1609354800000,
+    "label_i18n": {
+      "en": "Darknights Memoir",
+      "ja": "闇夜に生きる",
+      "ko": "흑야의 회고록",
+      "zh": "生于黑夜"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1608192000000,
+    "end": 1609358400000,
+    "label_i18n": {
+      "en": "Mansfield Break",
+      "ja": "孤島激震",
+      "ko": "맨스필드 브레이크",
+      "zh": "孤岛风云"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1609347600000,
+    "end": null,
+    "label_i18n": {
+      "en": "Chapter 7 Released",
+      "ja": "Chapter 7 Released",
+      "ko": "Chapter 7 Released",
+      "zh": "第七章开放"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1609311600000,
+    "end": null,
+    "label_i18n": {
+      "en": "Chapter 7 Released",
+      "ja": "Chapter 7 Released",
+      "ko": "Chapter 7 Released",
+      "zh": "第七章开放"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1609585200000,
+    "end": 1610794800000,
+    "label_i18n": {
+      "en": "1st Anniversary Limited-Time Special Drop",
+      "ja": "1周年記念物資回収キャンペーン",
+      "ko": "1주년 기념 기간 한정 드랍",
+      "zh": "一周年庆典限时掉落"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1609527600000,
+    "end": 1610737200000,
+    "label_i18n": {
+      "en": "1st Anniversary Limited-Time Special Drop",
+      "ja": "1周年記念物資回収キャンペーン",
+      "ko": "1주년 기념 기간 한정 드랍",
+      "zh": "一周年庆典限时掉落"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1609833600000,
+    "end": 1610395200000,
+    "label_i18n": {
+      "en": "Beyond Here",
+      "ja": "彼方を望む",
+      "ko": "비욘드 히어",
+      "zh": "此地之外"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1612512000000,
+    "end": 1613678400000,
+    "label_i18n": {
+      "en": "Who Is Real",
+      "ja": "画中人",
+      "ko": "화중인",
+      "zh": "画中人"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1614272400000,
+    "end": 1615460400000,
+    "label_i18n": {
+      "en": "The Great Chief Returns",
+      "ja": "帰還！密林の長",
+      "ko": "위대한 족장 가비알: 리턴즈",
+      "zh": "密林悍将归来"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1614236400000,
+    "end": 1615410000000,
+    "label_i18n": {
+      "en": "The Great Chief Returns",
+      "ja": "帰還！密林の長",
+      "ko": "위대한 족장 가비알: 리턴즈",
+      "zh": "密林悍将归来"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1615276800000,
+    "end": 1616443200000,
+    "label_i18n": {
+      "en": "Operation Originium Dust",
+      "ja": "オペレーション オリジニウムダスト",
+      "ko": "오리지늄 더스트",
+      "zh": "源石尘行动"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1616691600000,
+    "end": 1617274800000,
+    "label_i18n": {
+      "en": "Rewinding Breeze",
+      "ja": "在りし日の風を求めて",
+      "ko": "리와인딩 브리즈",
+      "zh": "踏寻往昔之风"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1616655600000,
+    "end": 1617217200000,
+    "label_i18n": {
+      "en": "Rewinding Breeze",
+      "ja": "在りし日の風を求めて",
+      "ko": "리와인딩 브리즈",
+      "zh": "踏寻往昔之风"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1617091200000,
+    "end": 1617912000000,
+    "label_i18n": {
+      "en": "Darknights Memoir - Rerun",
+      "ja": "闇夜に生きる・復刻",
+      "ko": "흑야의 회고록 재개방",
+      "zh": "生于黑夜・复刻"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1617901200000,
+    "end": 1619089200000,
+    "label_i18n": {
+      "en": "Maria Nearl",
+      "ja": "マリア・ニアール",
+      "ko": "마리아 니어",
+      "zh": "玛莉娅・临光"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1617865200000,
+    "end": 1619031600000,
+    "label_i18n": {
+      "en": "Maria Nearl",
+      "ja": "マリア・ニアール",
+      "ko": "마리아 니어",
+      "zh": "玛莉娅・临光"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1618473600000,
+    "end": 1619640000000,
+    "label_i18n": {
+      "en": "A Walk in The Dust",
+      "ja": "遺塵の道を",
+      "ko": "워크 인 더 더스트",
+      "zh": "遗尘漫步"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1619802000000,
+    "end": null,
+    "label_i18n": {
+      "en": "Chapter 8 Released",
+      "ja": "Chapter 8 Released",
+      "ko": "Chapter 8 Released",
+      "zh": "第八章开放"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1619766000000,
+    "end": null,
+    "label_i18n": {
+      "en": "Chapter 8 Released",
+      "ja": "Chapter 8 Released",
+      "ko": "Chapter 8 Released",
+      "zh": "第八章开放"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1619856000000,
+    "end": 1621022400000,
+    "label_i18n": {
+      "en": "Under Tides",
+      "ja": "潮汐の下",
+      "ko": "언더 타이즈",
+      "zh": "覆潮之下"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1621011600000,
+    "end": 1621854000000,
+    "label_i18n": {
+      "en": "Code of Brawl - Rerun",
+      "ja": "喧騒の掟・復刻",
+      "ko": "소란의 법칙 재개방",
+      "zh": "喧闹法则・复刻"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1620975600000,
+    "end": 1621796400000,
+    "label_i18n": {
+      "en": "Code of Brawl - Rerun",
+      "ja": "喧騒の掟・復刻",
+      "ko": "소란의 법칙 재개방",
+      "zh": "喧闹法则・复刻"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1619802000000,
+    "end": null,
+    "label_i18n": {
+      "en": "Chapter 8 Released",
+      "ja": "Chapter 8 Released",
+      "ko": "Chapter 8 Released",
+      "zh": "第八章开放"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1619766000000,
+    "end": null,
+    "label_i18n": {
+      "en": "Chapter 8 Released",
+      "ja": "Chapter 8 Released",
+      "ko": "Chapter 8 Released",
+      "zh": "第八章开放"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1622534400000,
+    "end": 1623096000000,
+    "label_i18n": {
+      "en": "Preluding Lights",
+      "ja": "灯火序曲",
+      "ko": "프렐류딩 라이츠",
+      "zh": "灯火序曲"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1623916800000,
+    "end": 1624737600000,
+    "label_i18n": {
+      "en": "Twilight of Wolumonde - Rerun",
+      "ja": "ウォルモンドの薄暮・復刻",
+      "ko": "월루몽드의 황혼 재개방",
+      "zh": "沃伦姆德的薄暮・复刻"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1624381200000,
+    "end": 1625569200000,
+    "label_i18n": {
+      "en": "Mansfield Break",
+      "ja": "孤島激震",
+      "ko": "맨스필드 브레이크",
+      "zh": "孤岛风云"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1624345200000,
+    "end": 1625511600000,
+    "label_i18n": {
+      "en": "Mansfield Break",
+      "ja": "孤島激震",
+      "ko": "맨스필드 브레이크",
+      "zh": "孤岛风云"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1625590800000,
+    "end": 1626174000000,
+    "label_i18n": {
+      "en": "Beyond Here",
+      "ja": "彼方を望む",
+      "ko": "비욘드 히어",
+      "zh": "此地之外"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1625554800000,
+    "end": 1626116400000,
+    "label_i18n": {
+      "en": "Beyond Here",
+      "ja": "彼方を望む",
+      "ko": "비욘드 히어",
+      "zh": "此地之外"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1626163200000,
+    "end": 1626724800000,
+    "label_i18n": {
+      "en": "Vigilo",
+      "ja": "VIGILO -我が眼に映るまま-",
+      "ko": "비질로: 내 눈에 비치는 대로",
+      "zh": "如我所见"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1626768000000,
+    "end": 1627588800000,
+    "label_i18n": {
+      "en": "The Great Chief Returns - Rerun",
+      "ja": "帰還！密林の長・復刻",
+      "ko": "위대한 족장 가비알: 리턴즈 재개방",
+      "zh": "密林悍将归来・复刻"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1627664400000,
+    "end": 1628852400000,
+    "label_i18n": {
+      "en": "Who Is Real",
+      "ja": "画中人",
+      "ko": "화중인",
+      "zh": "画中人"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1627628400000,
+    "end": 1628794800000,
+    "label_i18n": {
+      "en": "Who Is Real",
+      "ja": "画中人",
+      "ko": "화중인",
+      "zh": "画中人"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1627977600000,
+    "end": 1629748800000,
+    "label_i18n": {
+      "en": "Dossoles Holiday",
+      "ja": "ドッソレスホリデー",
+      "ko": "홀리데이 스타",
+      "zh": "多索雷斯假日"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1629306000000,
+    "end": 1630494000000,
+    "label_i18n": {
+      "en": "Operation Originium Dust",
+      "ja": "オペレーション オリジニウムダスト",
+      "ko": "오리지늄 더스트",
+      "zh": "源石尘行动"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1629270000000,
+    "end": 1630436400000,
+    "label_i18n": {
+      "en": "Operation Originium Dust",
+      "ja": "オペレーション オリジニウムダスト",
+      "ko": "오리지늄 더스트",
+      "zh": "源石尘行动"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1631034000000,
+    "end": 1631876400000,
+    "label_i18n": {
+      "en": "Darknights Memoir - Rerun",
+      "ja": "闇夜に生きる・復刻",
+      "ko": "흑야의 회고록 재개방",
+      "zh": "生于黑夜・复刻"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1630998000000,
+    "end": 1631818800000,
+    "label_i18n": {
+      "en": "Darknights Memoir - Rerun",
+      "ja": "闇夜に生きる・復刻",
+      "ko": "흑야의 회고록 재개방",
+      "zh": "生于黑夜・复刻"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1631865600000,
+    "end": null,
+    "label_i18n": {
+      "en": "Chapter 9 Released",
+      "ja": "Chapter 9 Released",
+      "ko": "Chapter 9 Released",
+      "zh": "第九章开放"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1633021200000,
+    "end": 1634209200000,
+    "label_i18n": {
+      "en": "A Walk in The Dust",
+      "ja": "遺塵の道を",
+      "ko": "워크 인 더 더스트",
+      "zh": "遗尘漫步"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1632985200000,
+    "end": 1634151600000,
+    "label_i18n": {
+      "en": "A Walk in The Dust",
+      "ja": "遺塵の道を",
+      "ko": "워크 인 더 더스트",
+      "zh": "遗尘漫步"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1633075200000,
+    "end": 1633896000000,
+    "label_i18n": {
+      "en": "Maria Nearl - Rerun",
+      "ja": "マリア・ニアール・復刻",
+      "ko": "마리아 니어 재개방",
+      "zh": "玛莉娅・临光・复刻"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1634284800000,
+    "end": 1634846400000,
+    "label_i18n": {
+      "en": "红松林",
+      "ja": "红松林",
+      "ko": "红松林",
+      "zh": "红松林"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1634835600000,
+    "end": 1636023600000,
+    "label_i18n": {
+      "en": "Under Tides",
+      "ja": "潮汐の下",
+      "ko": "언더 타이즈",
+      "zh": "覆潮之下"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1634799600000,
+    "end": 1635966000000,
+    "label_i18n": {
+      "en": "Under Tides",
+      "ja": "潮汐の下",
+      "ko": "언더 타이즈",
+      "zh": "覆潮之下"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1638864000000,
+    "end": 1639684800000,
+    "label_i18n": {
+      "en": "Mansfield Break - Rerun",
+      "ja": "孤島激震・復刻",
+      "ko": "맨스필드 브레이크 재개방",
+      "zh": "孤岛风云・复刻"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1639069200000,
+    "end": 1639652400000,
+    "label_i18n": {
+      "en": "Preluding Lights",
+      "ja": "灯火序曲",
+      "ko": "프렐류딩 라이츠",
+      "zh": "灯火序曲"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1639033200000,
+    "end": 1639594800000,
+    "label_i18n": {
+      "en": "Preluding Lights",
+      "ja": "灯火序曲",
+      "ko": "프렐류딩 라이츠",
+      "zh": "灯火序曲"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1641801600000,
+    "end": 1642622400000,
+    "label_i18n": {
+      "en": "Who Is Real - Rerun",
+      "ja": "画中人・復刻",
+      "ko": "화중인 재개방",
+      "zh": "画中人・复刻"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1642179600000,
+    "end": 1643972400000,
+    "label_i18n": {
+      "en": "Dossoles Holiday",
+      "ja": "ドッソレスホリデー",
+      "ko": "홀리데이 스타",
+      "zh": "多索雷斯假日"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1642143600000,
+    "end": 1643914800000,
+    "label_i18n": {
+      "en": "Dossoles Holiday",
+      "ja": "ドッソレスホリデー",
+      "ko": "홀리데이 스타",
+      "zh": "多索雷斯假日"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1643097600000,
+    "end": 1644264000000,
+    "label_i18n": {
+      "en": "将进酒",
+      "ja": "将进酒",
+      "ko": "将进酒",
+      "zh": "将进酒"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1640073600000,
+    "end": 1641240000000,
+    "label_i18n": {
+      "en": "Break The Ice",
+      "ja": "風雪一過",
+      "ko": "브레이크 디 아이스",
+      "zh": "风雪过境"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1643994000000,
+    "end": 1644836400000,
+    "label_i18n": {
+      "en": "The Great Chief Returns - Rerun",
+      "ja": "帰還！密林の長・復刻",
+      "ko": "위대한 족장 가비알: 리턴즈 재개방",
+      "zh": "密林悍将归来・复刻"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1643958000000,
+    "end": 1644778800000,
+    "label_i18n": {
+      "en": "The Great Chief Returns - Rerun",
+      "ja": "帰還！密林の長・復刻",
+      "ko": "위대한 족장 가비알: 리턴즈 재개방",
+      "zh": "密林悍将归来・复刻"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1644912000000,
+    "end": 1645473600000,
+    "label_i18n": {
+      "en": "阴云火花",
+      "ja": "阴云火花",
+      "ko": "阴云火花",
+      "zh": "阴云火花"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1645117200000,
+    "end": 1645700400000,
+    "label_i18n": {
+      "en": "Vigilo",
+      "ja": "VIGILO -我が眼に映るまま-",
+      "ko": "비질로: 내 눈에 비치는 대로",
+      "zh": "如我所见"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1645081200000,
+    "end": 1645642800000,
+    "label_i18n": {
+      "en": "Vigilo",
+      "ja": "VIGILO -我が眼に映るまま-",
+      "ko": "비질로: 내 눈에 비치는 대로",
+      "zh": "如我所见"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1647331200000,
+    "end": 1648497600000,
+    "label_i18n": {
+      "en": "吾导先路",
+      "ja": "吾导先路",
+      "ko": "吾导先路",
+      "zh": "吾导先路"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1648540800000,
+    "end": 1649361600000,
+    "label_i18n": {
+      "en": "A Walk in The Dust - Rerun",
+      "ja": "遺塵の道を・復刻",
+      "ko": "워크 인 더 더스트",
+      "zh": "遗尘漫步・复刻"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1648746000000,
+    "end": 1649588400000,
+    "label_i18n": {
+      "en": "Maria Nearl - Rerun",
+      "ja": "マリア・ニアール・復刻",
+      "ko": "마리아 니어 재개방",
+      "zh": "玛莉娅・临光・复刻"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1648710000000,
+    "end": 1649530800000,
+    "label_i18n": {
+      "en": "Maria Nearl - Rerun",
+      "ja": "マリア・ニアール・復刻",
+      "ko": "마리아 니어 재개방",
+      "zh": "玛莉娅・临光・复刻"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1649923200000,
+    "end": null,
+    "label_i18n": {
+      "en": "Chapter 10 Released",
+      "ja": "Chapter 10 Released",
+      "ko": "Chapter 10 Released",
+      "zh": "第十章开放"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1649955600000,
+    "end": 1650538800000,
+    "label_i18n": {
+      "en": "Pinus Sylvestris",
+      "ja": "赤松林",
+      "ko": "피누스 실베스트리스",
+      "zh": "红松林"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1649919600000,
+    "end": 1650481200000,
+    "label_i18n": {
+      "en": "Pinus Sylvestris",
+      "ja": "赤松林",
+      "ko": "피누스 실베스트리스",
+      "zh": "红松林"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1635753600000,
+    "end": 1637524800000,
+    "label_i18n": {
+      "en": "Near Light",
+      "ja": "ニアーライト",
+      "ko": "니어 라이트",
+      "zh": "长夜临光"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1651165200000,
+    "end": 1652958000000,
+    "label_i18n": {
+      "en": "Near Light",
+      "ja": "ニアーライト",
+      "ko": "니어 라이트",
+      "zh": "长夜临光"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1651129200000,
+    "end": 1652900400000,
+    "label_i18n": {
+      "en": "Near Light",
+      "ja": "ニアーライト",
+      "ko": "니어 라이트",
+      "zh": "长夜临光"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1651392000000,
+    "end": 1653163200000,
+    "label_i18n": {
+      "en": "愚人号",
+      "ja": "愚人号",
+      "ko": "愚人号",
+      "zh": "愚人号"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1653584400000,
+    "end": 1654426800000,
+    "label_i18n": {
+      "en": "Mansfield Break - Rerun",
+      "ja": "孤島激震・復刻",
+      "ko": "맨스필드 브레이크 재개방",
+      "zh": "孤岛风云・复刻"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1653548400000,
+    "end": 1654369200000,
+    "label_i18n": {
+      "en": "Mansfield Break - Rerun",
+      "ja": "孤島激震・復刻",
+      "ko": "맨스필드 브레이크 재개방",
+      "zh": "孤岛风云・复刻"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1653897600000,
+    "end": 1654718400000,
+    "label_i18n": {
+      "en": "Under Tides - Rerun",
+      "ja": "潮汐の下・復刻",
+      "ko": "언더 타이즈 재개방",
+      "zh": "覆潮之下・复刻"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1654761600000,
+    "end": 1655928000000,
+    "label_i18n": {
+      "en": "尘影余音",
+      "ja": "尘影余音",
+      "ko": "尘影余音",
+      "zh": "尘影余音"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1656608400000,
+    "end": 1657796400000,
+    "label_i18n": {
+      "en": "Break The Ice",
+      "ja": "風雪一過",
+      "ko": "브레이크 디 아이스",
+      "zh": "风雪过境"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1656572400000,
+    "end": 1657738800000,
+    "label_i18n": {
+      "en": "Break The Ice",
+      "ja": "風雪一過",
+      "ko": "브레이크 디 아이스",
+      "zh": "风雪过境"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1657008000000,
+    "end": 1658174400000,
+    "label_i18n": {
+      "en": "绿野幻梦",
+      "ja": "绿野幻梦",
+      "ko": "绿野幻梦",
+      "zh": "绿野幻梦"
+    },
+    "existence": {
+      "CN": {
+        "exist": true
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  },
+  {
+    "start": 1657818000000,
+    "end": 1658660400000,
+    "label_i18n": {
+      "en": "Who Is Real - Rerun",
+      "ja": "画中人・復刻",
+      "ko": "화중인 재개방",
+      "zh": "画中人・复刻"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": false
+      },
+      "KR": {
+        "exist": false
+      },
+      "US": {
+        "exist": true
+      }
+    }
+  },
+  {
+    "start": 1657782000000,
+    "end": 1658602800000,
+    "label_i18n": {
+      "en": "Who Is Real - Rerun",
+      "ja": "画中人・復刻",
+      "ko": "화중인 재개방",
+      "zh": "画中人・复刻"
+    },
+    "existence": {
+      "CN": {
+        "exist": false
+      },
+      "JP": {
+        "exist": true
+      },
+      "KR": {
+        "exist": true
+      },
+      "US": {
+        "exist": false
+      }
+    }
+  }
+]
