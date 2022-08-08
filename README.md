@@ -1,5 +1,4 @@
 # ArknightsMaterialPlannerTW （施工中... / In progress...）
-=======
 以未來視，修正[明日方舟刷素材一圖流（ArkOneGraph）](https://aog.wiki/)失真狀況（適用繁中服（台服）、國際服（日、韓、美服））。
 1. 沿用**線性規劃算法**（[ArkPlanner](https://github.com/penguin-statistics/ArkPlanner)），以未來視之掉落素材/關卡/機率，解決未來不確定性問題（適用繁中服（臺服））。
     - 由於原**線性規劃算法**可能存在某些缺點，見以下影片
