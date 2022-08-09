@@ -1,7 +1,13 @@
-import numpy as np
-import urllib.request, json, time, os, copy, sys
-from scipy.optimize import linprog
+import copy
+import json
+import os
+import sys
+import time
+import urllib.request
 from collections import defaultdict as ddict
+
+import numpy as np
+from scipy.optimize import linprog
 
 global penguin_url, headers, LanguageMap
 penguin_url = 'https://penguin-stats.io/PenguinStats/api/v2/'

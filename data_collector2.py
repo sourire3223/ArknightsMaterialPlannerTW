@@ -101,7 +101,7 @@ class DataCollector:
             if eval(f"cls._{func.__name__}  == None"):
                 if not isfile(f"./data/{func.__name__}.json"):
                     logger.warning(
-                        f"{func.__name__}.json is not found. Download data from {URL_ITEM}") # TODO (0810): URL by function name
+                        f"{func.__name__}.json is not found. Download data from {URL_ITEM}")
                     exec(f"cls._{func.__name__} = cls._save_{func.__name__}()")
                     # cls._item_map = cls._save_item_map()
                 else:
@@ -115,7 +115,16 @@ class DataCollector:
     @property
     @load_when_call
     def item_map(cls):
-        pass
+        if cls._item_map == None:
+            if not isfile("./data/item_map.json"):
+                logger.warning(
+                    f"item_map.json is not found. Download data from {URL_ITEM}")
+                cls._item_map = cls._save_item_map()
+            else:
+                with open("./data/item_map.json", 'r', encoding="utf-8-sig") as fr:
+                    cls._item_map = json.loads(fr.read())
+
+        return cls._item_map
 
     @classmethod
     @property
