@@ -1,5 +1,6 @@
 import json
 from dataclasses import dataclass
+from functools import wraps
 from os.path import isfile
 from threading import Thread
 
@@ -32,9 +33,33 @@ __UPGRADE_ITEM_VALUE = {"基础作战记录": 200 * 0.0035,
                         "高级作战记录": 2000 * 0.0035,
                         "赤金": 400 * 0.0035,
                         "龙门币": 0.0035}
-# @datatclass
+
 
 # TODO (paulpork): 合成用什麼賺
+
+def load_when_call(func):
+    """deocorator: load when call first
+    args:
+        func: function to decorate
+    """
+    def wrapper(cls):
+        name = func.__name__
+        if getattr(cls, f"_{name}") == None:
+            # if not hasattr(cls, "_" + name):
+            if not isfile(f"./data/{name}.json"):
+                wrapper_logger = logger.patch(
+                    lambda r: r.update(function=name))
+                wrapper_logger.warning(f"{name}.json is not found.")
+                setattr(cls, "_" + name, getattr(cls, "_save_" + name)())
+                # cls._name = cls._save_name()
+            else:
+                with open(f"./data/{name}.json", 'r', encoding="utf-8-sig") as fr:
+                    setattr(cls, "_" + name, json.loads(fr.read()))
+                    # cls._name = json.loads(fr.read())
+
+        return getattr(cls, f"_{name}")
+        # return cls._name
+    return wrapper
 
 
 @dataclass
@@ -72,78 +97,48 @@ class DataCollector:
     @classmethod
     def update_all(cls) -> None:
         thread_list = list()
-        thread_list.append(Thread(target = cls._save_item_map))
-        thread_list.append(Thread(target = cls._save_stage_map))
-        thread_list.append(Thread(target = cls._save_operator_map))
-        thread_list.append(Thread(target = cls._save_skill_map))
-        thread_list.append(Thread(target = cls._save_uniequip_map))
-        thread_list.append(Thread(target = cls._save_event_list))
-        thread_list.append(Thread(target = cls._save_zone_map))
-        thread_list.append(Thread(target = cls._save_price))
-        thread_list.append(Thread(target = cls._save_operator_order))
+        thread_list.append(Thread(target=cls._save_item_map))
+        thread_list.append(Thread(target=cls._save_stage_map))
+        thread_list.append(Thread(target=cls._save_operator_map))
+        thread_list.append(Thread(target=cls._save_skill_map))
+        thread_list.append(Thread(target=cls._save_uniequip_map))
+        thread_list.append(Thread(target=cls._save_event_list))
+        thread_list.append(Thread(target=cls._save_zone_map))
+        thread_list.append(Thread(target=cls._save_price))
+        thread_list.append(Thread(target=cls._save_operator_order))
         # cls._LAST_OPERATOR_TIME = cls._operator_order.pop('LAST_OPERATOR_TIME')
         for thread in thread_list:
             thread.start()
         for thread in thread_list:
-            thread.join() # wait for all threads to finish
+            thread.join()  # wait for all threads to finish
 
         # dependency update
-        t1 = Thread(target = cls._save_cultivate_info) # dependency: item_map, operator_map, skill_map, uniequip_map
-        t2 = Thread(target = cls._save_zone_matrix) # dependency: item_map, stage_map, zone_map 
+        # dependency: item_map, operator_map, skill_map, uniequip_map
+        t1 = Thread(target=cls._save_cultivate_info)
+        # dependency: item_map, stage_map, zone_map
+        t2 = Thread(target=cls._save_zone_matrix)
         t1.start()
         t2.start()
         t1.join()
         t2.join()
 
-
-    def load_when_call(func):
-        def wrapper(cls):
-            if eval(f"cls._{func.__name__}  == None"):
-                if not isfile(f"./data/{func.__name__}.json"):
-                    logger.warning(
-                        f"{func.__name__}.json is not found. Download data from {URL_ITEM}") # TODO (0810): URL by function name
-                    exec(f"cls._{func.__name__} = cls._save_{func.__name__}()")
-                    # cls._item_map = cls._save_item_map()
-                else:
-                    with open(f"./data/{func.__name__}.json", 'r', encoding="utf-8-sig") as fr:
-                       exec(f"cls._{func.__name__} = json.loads(fr.read())")
-            return eval(f"cls._{func.__name__}")
-        return wrapper
-
-
     @classmethod
     @property
     @load_when_call
-    def item_map(cls):
+    def item_map(cls) -> dict[str, str]:
         pass
 
     @classmethod
     @property
+    @load_when_call
     def stage_map(cls) -> dict[str, list[str]]:
-        if cls._stage_map == None:
-            if not isfile("./data/stage_map.json"):
-                logger.warning(
-                    f"stage_map.json is not found. Download data from {URL_STAGE}")
-                cls._stage_map = cls._save_stage_map()
-            else:
-                with open("./data/stage_map.json", 'r', encoding="utf-8-sig") as fr:
-                    cls._stage_map = json.loads(fr.read())
-
-        return cls._stage_map
+        pass
 
     @classmethod
     @property
+    @load_when_call
     def operator_map(cls) -> dict[str, dict[str, str]]:
-        if cls._operator_map == None:
-            if not isfile("./data/operator_map.json"):
-                logger.warning(
-                    f"operator_map.json is not found. Download data from {URL_OPERATOR}")
-                cls._operator_map = cls._save_operator_map()
-            else:
-                with open("./data/operator_map.json", 'r', encoding="utf-8-sig") as fr:
-                    cls._operator_map = json.loads(fr.read())
-
-        return cls._operator_map
+        pass
 
     @classmethod
     @property
@@ -167,106 +162,54 @@ class DataCollector:
     def LAST_OPERATOR_TIME(cls):
         if cls._LAST_OPERATOR_TIME == None:
             _ = cls.operator_order
-
         return cls._LAST_OPERATOR_TIME
 
     @classmethod
     @property
+    def LAST_OPERATOR_TIME_TAIPEI(cls):
+        return pd.Timestamp(cls.LAST_OPERATOR_TIME, unit='s').strftime("%Y-%m-%d %H:%M:%S")
+
+    @classmethod
+    @property
+    @load_when_call
     def skill_map(cls) -> dict[str, str]:
-        if cls._skill_map == None:
-            if not isfile("./data/skill_map.json"):
-                logger.warning(
-                    f"skill_map.json is not found. Download data from {URL_SKILL}")
-                cls._skill_map = cls._save_skill_map()
-            else:
-                with open("./data/skill_map.json", 'r', encoding="utf-8-sig") as fr:
-                    cls._skill_map = json.loads(fr.read())
-
-        return cls._skill_map
+        pass
 
     @classmethod
     @property
+    @load_when_call
     def uniequip_map(cls) -> dict[str, str]:
-        if cls._uniequip_map == None:
-            if not isfile("./data/uniequip_map.json"):
-                logger.warning(
-                    f"uniequip_map.json is not found. Download data from {URL_UNIEQUIP}")
-                cls._uniequip_map = cls._save_uniequip_map()
-            else:
-                with open("./data/uniequip_map.json", 'r', encoding="utf-8-sig") as fr:
-                    cls._uniequip_map = json.loads(fr.read())
-
-        return cls._uniequip_map
+        pass
 
     @classmethod
     @property
+    @load_when_call
     def cultivate_info(cls) -> dict[str, ]:
-        if cls._cultivate_info == None:
-            if not isfile("./data/cultivate_info.json"):
-                logger.warning(
-                    f"cultivate_info.json is not found. Download data from {URL_CULTIVATE}")
-                cls._cultivate_info = cls._save_cultivate_info()
-            else:
-                with open("./data/cultivate_info.json", 'r', encoding="utf-8-sig") as fr:
-                    cls._cultivate_info = json.loads(fr.read())
-
-        return cls._cultivate_info
+        pass
 
     @classmethod
     @property
+    @load_when_call
     def event_list(cls) -> dict[str, list[int]]:
-        if cls._event_list == None:
-            if not isfile("./data/event_list.json"):
-                logger.warning(
-                    f"event_list.json is not found. Download data from {URL_EVENT}")
-                cls._event_list = cls._save_event_list()
-            else:
-                with open("./data/event_list.json", 'r', encoding="utf-8-sig") as fr:
-                    cls._event_list = json.loads(fr.read())
-
-        return cls._event_list
+        pass
 
     @classmethod
     @property
+    @load_when_call
     def zone_map(cls) -> dict[str, str]:
-        if cls._zone_map == None:
-            if not isfile("./data/zone_map.json"):
-                logger.warning(
-                    f"zone_map.json is not found. Download data from {URL_ZONE}")
-                cls._zone_map = cls._save_zone_map()
-            else:
-                with open("./data/zone_map.json", 'r', encoding="utf-8-sig") as fr:
-                    cls._zone_map = json.loads(fr.read())
-
-        return cls._zone_map
+        pass
 
     @classmethod
     @property
+    @load_when_call
     def zone_matrix(cls) -> dict[str, dict[str, ]]:
-        if cls._zone_matrix == None:
-            if not isfile("./data/zone_matrix.json"):
-                logger.warning(
-                    f"zone_matrix.json is not found. Download data from {URL_MATRIX_PRIVATE} & {URL_STAGE}")
-                cls._zone_matrix = cls._save_zone_matrix()
-            else:
-                with open("./data/zone_matrix.json", 'r', encoding="utf-8-sig") as fr:
-                    cls._zone_matrix = json.loads(fr.read())
-
-        return cls._zone_matrix
+        pass
 
     @classmethod
     @property
+    @load_when_call
     def price(cls) -> dict[str, int]:
-        if cls._price == None:
-            if not isfile("./data/price.json"):
-                logger.warning(
-                    f"price.json is not found. Download data from {URL_PRICE}")
-                cls._price = cls._save_price()
-            else:
-                with open("./data/price.json", 'r', encoding="utf-8-sig") as fr:
-                    cls._price = json.loads(fr.read())
-
-        return cls._price
+        pass
 
     @classmethod
     @property
@@ -439,6 +382,7 @@ class DataCollector:
     @classmethod
     def _save_item_map(cls):
         try:
+            logger.info(f"Download item.json from {URL_ITEM}.")
             with requests.get(URL_ITEM) as response:
                 txt = json.loads(response.text)
 
@@ -453,13 +397,11 @@ class DataCollector:
             # raw data
             with open("./data/raw/item.json", 'w', encoding="utf-8") as fw:
                 json.dump(txt, fw, indent=2, ensure_ascii=False)
-            logger.info(f"Download item.json successfully from {URL_ITEM}.")
 
             # item_map
             with open("./data/item_map.json", 'w', encoding="utf-8") as fw:
                 json.dump(item_map, fw, indent=2, ensure_ascii=False)
             logger.info(f"item.json and item_map.json are saved.")
-
 
             cls._item_map = item_map
             return item_map
@@ -471,6 +413,7 @@ class DataCollector:
     @classmethod
     def _save_stage_map(cls):
         try:
+            logger.info(f"Download stage.json from {URL_STAGE}.")
             with requests.get(URL_STAGE) as response:
                 txt = json.loads(response.text)
 
@@ -490,8 +433,6 @@ class DataCollector:
             # raw data
             with open("./data/raw/stage.json", 'w', encoding="utf-8") as fw:
                 json.dump(txt, fw, indent=2, ensure_ascii=False)
-            logger.info(
-                f"stage.json is successfully downloaded from {URL_STAGE}.")
 
             # stage_map
             with open("./data/stage_map.json", 'w', encoding="utf-8") as fw:
@@ -508,6 +449,7 @@ class DataCollector:
     @classmethod
     def _save_operator_map(cls) -> dict[str, str]:
         try:
+            logger.info(f"Download operator.json from {URL_OPERATOR}.")
             with requests.get(URL_OPERATOR) as response:
                 txt = json.loads(response.text)
 
@@ -522,13 +464,11 @@ class DataCollector:
             # raw data
             with open("./data/raw/operator.json", 'w', encoding="utf-8") as fw:
                 json.dump(txt, fw, indent=2, ensure_ascii=False)
-            logger.info(
-                f"operator.json is successfully downloaded from {URL_OPERATOR}.")
 
             # operator_map
             with open("./data/operator_map.json", 'w', encoding="utf-8") as fw:
                 json.dump(operator_map, fw, indent=2, ensure_ascii=False)
-            logger.info(f"operator.json and operator_map.json are saved.")
+            logger.success("operator.json and operator_map.json are saved.")
 
             cls._operator_map = operator_map
             return operator_map
@@ -540,6 +480,7 @@ class DataCollector:
     @classmethod
     def _save_operator_order(cls) -> dict[str, str]:
         try:
+            logger.info(f"Download operator_order.json from {URL_OPERATOR}.")
             dfs = pd.read_html(URL_OPERATOR_ORDER)
             operator_order = {row.干员: int(pd.to_datetime(row.国服上线时间, format='%Y年%m月%d日 %H:%M').timestamp())
                               for i, row in dfs[0].iterrows()}
@@ -548,10 +489,11 @@ class DataCollector:
             # operator_order
             with open("./data/operator_order.json", 'w', encoding="utf-8") as fw:
                 json.dump(operator_order, fw, indent=2, ensure_ascii=False)
-            logger.info(f"operator_order.json is saved.")
+            logger.success("operator_order.json is saved.")
 
             cls._operator_order = operator_order
-            cls._LAST_OPERATOR_TIME = cls._operator_order.pop('LAST_OPERATOR_TIME')
+            cls._LAST_OPERATOR_TIME = cls._operator_order.pop(
+                'LAST_OPERATOR_TIME')
 
             return operator_order
         except Exception as e:
@@ -562,6 +504,7 @@ class DataCollector:
     @classmethod
     def _save_skill_map(cls) -> dict[str, str]:
         try:
+            logger.info(f"Download skill.json from {URL_SKILL}.")
             with requests.get(URL_SKILL) as response:
                 txt = json.loads(response.text)
 
@@ -576,13 +519,11 @@ class DataCollector:
             # raw data
             with open("./data/raw/skill.json", 'w', encoding="utf-8") as fw:
                 json.dump(txt, fw, indent=2, ensure_ascii=False)
-            logger.info(
-                f"skill.json is successfully downloaded from {URL_SKILL}.")
 
             # skill_map
             with open("./data/skill_map.json", 'w', encoding="utf-8") as fw:
                 json.dump(skill_map, fw, indent=2, ensure_ascii=False)
-            logger.info(f"skill.json and skill_map.json are saved.")
+            logger.success(f"skill.json and skill_map.json are saved.")
 
             cls._skill_map = skill_map
             return skill_map
@@ -594,6 +535,7 @@ class DataCollector:
     @classmethod
     def _save_uniequip_map(cls) -> dict[str, str]:
         try:
+            logger.info(f"Download uniequip.json from {URL_UNIEQUIP}.")
             with requests.get(URL_UNIEQUIP) as response:
                 txt = json.loads(response.text)
 
@@ -608,13 +550,11 @@ class DataCollector:
             # raw data
             with open("./data/raw/uniequip.json", 'w', encoding="utf-8") as fw:
                 json.dump(txt, fw, indent=2, ensure_ascii=False)
-            logger.info(
-                f"uniequip.json is successfully downloaded from {URL_UNIEQUIP}.")
 
             # uniequip_map
             with open("./data/uniequip_map.json", 'w', encoding="utf-8") as fw:
                 json.dump(uniequip_map, fw, indent=2, ensure_ascii=False)
-            logger.info(f"uniequip.json and uniequip_map.json are saved.")
+            logger.success("uniequip.json and uniequip_map.json are saved.")
 
             cls._uniequip_map = uniequip_map
             return uniequip_map
@@ -629,6 +569,7 @@ class DataCollector:
         dependency: item_map, operator_map, skill_map, uniequip_map
         """
         try:
+            logger.info(f"Download cultivate.json from {URL_CULTIVATE}.")
             with requests.get(URL_CULTIVATE) as response:
                 txt = json.loads(response.text)
 
@@ -653,13 +594,11 @@ class DataCollector:
             # raw data
             with open("./data/raw/cultivate.json", 'w', encoding="utf-8") as fw:
                 json.dump(txt, fw, indent=2, ensure_ascii=False)
-            logger.info(
-                f"cultivate.json is successfully downloaded from {URL_CULTIVATE}.")
 
             # caltivate_info
             with open("./data/cultivate_info.json", 'w', encoding="utf-8") as fw:
                 json.dump(cultivate_info, fw, indent=2, ensure_ascii=False)
-            logger.info(f"cultivate.json and cultivate_info.json are saved.")
+            logger.success("cultivate.json and cultivate_info.json are saved.")
 
             cls._cultivate_info = cultivate_info
             return cultivate_info
@@ -671,6 +610,7 @@ class DataCollector:
     @classmethod
     def _save_event_list(cls) -> list:
         try:
+            logger.info(f"Download event.json from {URL_EVENT}.")
             with requests.get(URL_EVENT) as response:
                 txt = json.loads(response.text)
 
@@ -681,13 +621,11 @@ class DataCollector:
             # raw data
             with open("./data/raw/event.json", 'w', encoding="utf-8") as fw:
                 json.dump(txt, fw, indent=2, ensure_ascii=False)
-            logger.info(
-                f"event.json is successfully downloaded from {URL_EVENT}.")
 
             # event_list
             with open("./data/event_list.json", 'w', encoding="utf-8") as fw:
                 json.dump(event_list, fw, indent=2, ensure_ascii=False)
-            logger.info(f"event.json and event_list.json are saved.")
+            logger.success("event.json and event_list.json are saved.")
 
             cls._event_list = event_list
             return event_list
@@ -699,6 +637,7 @@ class DataCollector:
     @classmethod
     def _save_zone_map(cls) -> dict[str, str]:
         try:
+            logger.info(f"Download zone.json from {URL_ZONE}.")
             with requests.get(URL_ZONE) as response:
                 txt = json.loads(response.text)
 
@@ -717,13 +656,11 @@ class DataCollector:
             # raw data
             with open("./data/raw/zone.json", 'w', encoding="utf-8") as fw:
                 json.dump(txt, fw, indent=2, ensure_ascii=False)
-            logger.info(
-                f"zone.json is successfully downloaded from {URL_ZONE}.")
 
             # zone_map
             with open("./data/zone_map.json", 'w', encoding="utf-8") as fw:
                 json.dump(zone_map, fw, indent=2, ensure_ascii=False)
-            logger.info(f"zone.json and zone_map.json are saved.")
+            logger.success(f"zone.json and zone_map.json are saved.")
 
             cls._zone_map = zone_map
             return zone_map
@@ -758,6 +695,7 @@ class DataCollector:
             zone_matrix = dict()
 
             # MATRIX
+            logger.info(f"Download matrix.json from {URL_MATRIX_PRIVATE}.")
             with requests.get(URL_MATRIX_PRIVATE) as response:
                 txt = json.loads(response.text)
             txt = txt["matrix"]
@@ -799,13 +737,11 @@ class DataCollector:
             # raw data
             with open("./data/raw/matrix.json", 'w', encoding="utf-8") as fw:
                 json.dump(txt, fw, indent=2, ensure_ascii=False)
-            logger.info(
-                f"matrix.json is successfully downloaded from {URL_MATRIX_PRIVATE}.")
 
             # zone_matrix
             with open("./data/zone_matrix.json", 'w', encoding="utf-8") as fw:
                 json.dump(zone_matrix, fw, indent=2, ensure_ascii=False)
-            logger.info(f"matrix.json and zone_matrix.json are saved.")
+            logger.success(f"matrix.json and zone_matrix.json are saved.")
 
             cls._zone_matrix = zone_matrix
             return zone_matrix
@@ -817,6 +753,7 @@ class DataCollector:
     @classmethod
     def _save_price(cls) -> dict:
         try:
+            logger.info(f"Download price.txt from {URL_PRICE}.")
             with requests.get(URL_PRICE) as response:
                 txt = response.text
 
@@ -826,13 +763,11 @@ class DataCollector:
             # raw data
             with open("./data/raw/price.txt", 'w', encoding="utf-8") as fw:
                 fw.write(txt)
-            logger.info(
-                f"price.txt is successfully downloaded from {URL_PRICE}.")
 
             # price.json
             with open("./data/price.json", 'w', encoding="utf-8") as fw:
                 json.dump(price, fw, indent=2, ensure_ascii=False)
-            logger.info(f"price.json is saved.")
+            logger.success(f"price.txt and price.json are saved.")
 
             cls._price = price
             return price
