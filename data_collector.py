@@ -1,6 +1,5 @@
 import json
 from dataclasses import dataclass
-from functools import wraps
 from os.path import isfile
 from threading import Thread
 
@@ -44,21 +43,22 @@ def load_when_call(func):
     """
     def wrapper(cls):
         name = func.__name__
+        # if not hasattr(cls, "_" + name):
         if getattr(cls, f"_{name}") == None:
-            # if not hasattr(cls, "_" + name):
             if not isfile(f"./data/{name}.json"):
                 wrapper_logger = logger.patch(
                     lambda r: r.update(function=name))
                 wrapper_logger.warning(f"{name}.json is not found.")
-                setattr(cls, "_" + name, getattr(cls, "_save_" + name)())
                 # cls._name = cls._save_name()
+                _ = getattr(cls, "_save_" + name)()
             else:
                 with open(f"./data/{name}.json", 'r', encoding="utf-8-sig") as fr:
-                    setattr(cls, "_" + name, json.loads(fr.read()))
                     # cls._name = json.loads(fr.read())
+                    setattr(cls, "_" + name, json.loads(fr.read()))
 
-        return getattr(cls, f"_{name}")
         # return cls._name
+        return getattr(cls, f"_{name}")
+
     return wrapper
 
 
@@ -74,11 +74,15 @@ class DataCollector:
     _zone_map: None | dict = None
     _zone_matrix: None | dict = None
     _price: None | dict = None
+    _formula18: None | dict = None
+    _formula20: None | dict = None
+    _formulaBlemishine: None | dict = None
 
     _operator_order: None | dict = None
     _LAST_OPERATOR_TIME: None | int = None
 
     _target_items: None | dict = None
+    _level: None | dict = None
 
     # def __init__(self, update: bool = False):
     #     self.item_map = self.load_item_map(update)
@@ -106,6 +110,7 @@ class DataCollector:
         thread_list.append(Thread(target=cls._save_zone_map))
         thread_list.append(Thread(target=cls._save_price))
         thread_list.append(Thread(target=cls._save_operator_order))
+        thread_list.append(Thread(target=cls._save_formula))
         # cls._LAST_OPERATOR_TIME = cls._operator_order.pop('LAST_OPERATOR_TIME')
         for thread in thread_list:
             thread.start()
@@ -145,9 +150,8 @@ class DataCollector:
     def operator_order(cls) -> dict[str, int]:
         if cls._operator_order == None:
             if not isfile("./data/operator_order.json"):
-                logger.warning(
-                    f"operator_order.json is not found. Download data from {URL_OPERATOR_ORDER}")
-                cls._operator_order = cls._save_operator_order()
+                logger.warning(f"operator_order.json is not found.")
+                _ = cls._save_operator_order()
             else:
                 with open("./data/operator_order.json", 'r', encoding="utf-8-sig") as fr:
                     cls._operator_order = json.loads(fr.read())
@@ -213,14 +217,82 @@ class DataCollector:
 
     @classmethod
     @property
-    def target_items(cls):
-        if _target_items == None:
-            _target_items = {k: v for k, v in dc.item_map.items() if (
-                v[-1] in "12345" and len(v) == 5) or "作战记录" in k or k == "赤金"}
-            _target_items |= {"龙门币": "4001"}
-        return _target_items
+    def formula18(cls) -> dict[str, dict[str, float]]:
+        if cls._formula18 == None:
+            if not isfile("./data/formula18.json"):
+                logger.warning(
+                    f"formula18.json is not found.")
+                cls._save_formula()  # no return
+            else:
+                with open("./data/formula18.json", 'r', encoding="utf-8-sig") as fr:
+                    cls._formula18 = json.loads(fr.read())
+        return cls._formula18
 
-    # TODO 0802: 建df方式
+    @classmethod
+    @property
+    def formula20(cls) -> dict[str, dict[str, float]]:
+        if cls._formula20 == None:
+            if not isfile("./data/formula20.json"):
+                logger.warning(
+                    f"formula20.json is not found.")
+                cls._save_formula()  # no return
+            else:
+                with open("./data/formula20.json", 'r', encoding="utf-8-sig") as fr:
+                    cls._formula20 = json.loads(fr.read())
+        return cls._formula20
+
+    @classmethod
+    @property
+    def formulaBlemishine(cls) -> dict[str, dict[str, float]]:
+        if cls._formulaBlemishine == None:
+            if not isfile("./data/formulaBlemishine.json"):
+                logger.warning(
+                    f"formulaBlemishine.json is not found.")
+                cls._save_formula()  # no return
+            else:
+                with open("./data/formulaBlemishine.json", 'r', encoding="utf-8-sig") as fr:
+                    cls._formulaBlemishine = json.loads(fr.read())
+        return cls._formulaBlemishine
+
+    @classmethod
+    @property
+    def target_items(cls):
+        if cls._target_items == None:
+            cls._target_items = {k: v for k, v in cls.item_map.items() if (
+                v[-1] in "12345" and v[0].isdigit() and len(v) == 5) or "作战记录" in k or k == "赤金"}
+            cls._target_items |= {"龙门币": "4001"}
+        return cls._target_items
+
+    @classmethod
+    @property
+    def level(cls):
+        if cls._level == None:
+            cls._level = {k: v[-1] for k, v in cls.item_map.items() if (
+                v[-1] in "12345" and v[0].isdigit() and len(v) == 5)}
+        return cls._level
+
+    @classmethod
+    def get_df_matrix(cls, formula: str | dict[str, dict[str, float]]) -> pd.DataFrame:
+        match formula:
+            case "18" | "fomula18":
+                formula = cls.formula18
+            case "20" | "fomula20":
+                formula = cls.formula20
+            case "Blemishine" | "fomulaBlemishine":
+                formula = cls.formulaBlemishine
+            case dict():
+                pass
+            case _:
+                raise ValueError(
+                    f"formula must be '18', '20', 'Blemishine' or 'formula18', 'formula20', 'formulaBlemishine'or a dict, but {formula}"
+                )
+
+        df = pd.DataFrame(columns=cls.target_items.keys())
+        # from zone_matrix
+        # from formula
+        # from __UPGRADE_ITEM_VALUE
+        # TODO 0812: 建df方式
+        return df
 
     def generate_future_activity_materials(self,
                                            current_event_name: str = "玛莉娅・临光・复刻",
@@ -775,6 +847,49 @@ class DataCollector:
             logger.error("Fail to update price.")
             logger.exception(e)
             return dict()
+
+    @classmethod
+    def _save_formula(cls) -> dict:
+        try:
+            logger.info(f"Download formula.json from {URL_FORMULA}.")
+            with requests.get(URL_FORMULA) as response:
+                txt = json.loads(response.text)
+
+            formula18 = {
+                comp_form["name"]: DataCollector.add({"龙门币": -comp_form["goldCost"]} | {item["name"]: -item["count"] for item in comp_form["costs"]},
+                                                     {item["name"]: 0.18 * item["count"] * item["weight"] / comp_form["totalWeight"] for item in comp_form["extraOutcome"]})
+                for comp_form in txt}
+            formula20 = {
+                comp_form["name"]: DataCollector.add({"龙门币": -comp_form["goldCost"]} | {item["name"]: -item["count"] for item in comp_form["costs"]},
+                                                     {item["name"]: 0.2 * item["count"] * item["weight"] / comp_form["totalWeight"] for item in comp_form["extraOutcome"]})
+                for comp_form in txt}
+            formulaBlemishine = {
+                comp_form["name"]: DataCollector.add({"龙门币": -comp_form["goldCost"] / 2} | {item["name"]: -item["count"] for item in comp_form["costs"]},
+                                                     {item["name"]: 0.14 * item["count"] * item["weight"] / comp_form["totalWeight"] for item in comp_form["extraOutcome"]})
+                for comp_form in txt}
+            # raw data
+            with open("./data/raw/formula.json", 'w', encoding="utf-8") as fw:
+                json.dump(txt, fw, indent=2, ensure_ascii=False)
+
+            # formula18.json & formula20.json & formulaBlemishine.json
+            with open("./data/formula18.json", 'w', encoding="utf-8") as fw:
+                json.dump(formula18, fw, indent=2, ensure_ascii=False)
+            with open("./data/formula20.json", 'w', encoding="utf-8") as fw:
+                json.dump(formula20, fw, indent=2, ensure_ascii=False)
+            with open("./data/formulaBlemishine.json", 'w', encoding="utf-8") as fw:
+                json.dump(formulaBlemishine, fw, indent=2, ensure_ascii=False)
+
+            logger.success(
+                f"formula.json, formula18.json, formula20.json, and formulaBlemishine.json are saved.")
+
+            cls._formula18 = formula18
+            cls._formula20 = formula20
+            cls._formulaBlemishine = formulaBlemishine
+
+        except Exception as e:
+            logger.error("Fail to update formula.")
+            logger.exception(e)
+            # return dict()
 
     @staticmethod
     def add(d1, d2):
