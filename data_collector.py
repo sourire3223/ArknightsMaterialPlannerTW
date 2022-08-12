@@ -324,6 +324,7 @@ class DataCollector:
         # TODO 0812: 建df方式
         # TODO 0813: not yet done, check correctness
         return df
+    # TODO: get sanity df & @property sanity
 
     def generate_future_activity_materials(self,
                                            current_event_name: str = "玛莉娅・临光・复刻",
