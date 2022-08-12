@@ -1,5 +1,7 @@
+import datetime
 import json
 from dataclasses import dataclass
+from difflib import SequenceMatcher
 from os.path import isfile
 from threading import Thread
 
@@ -256,6 +258,17 @@ class DataCollector:
 
     @classmethod
     @property
+    def formulaOPT(cls) -> dict[str, dict[str, float]]:
+        pass
+        # TODO: formula20 + formulaBlemishine
+        # if cls._formulaOPT == None:
+        #     if not isfile("./data/formulaOPT.json"):
+        #         logger.warning(
+        #             f"formulaOPT.json is not found.")
+        #         cls._save_formula()
+
+    @classmethod
+    @property
     def target_items(cls):
         if cls._target_items == None:
             cls._target_items = {k: v for k, v in cls.item_map.items() if (
@@ -288,10 +301,28 @@ class DataCollector:
                 )
 
         df = pd.DataFrame(columns=cls.target_items.keys())
-        # from zone_matrix
-        # from formula
+        # from zone_matrix, TODO: check correctness
+        min_times = 1000  # delta = 0.025, prob = 0.95 (single tail)
+        new_dict = dict()
+        dc.zone_matrix.keys()
+        for zone, stage_matrix in dc.zone_matrix.items():
+            for stage, matrix in stage_matrix.items():
+                if "・复刻" in zone:
+                    stage += "・复刻"
+                elif "・永久" in zone:
+                    stage += "・永久"
+
+                stage_dict = {item: info["drop_rate"] for item, info in matrix["drop_info"].items(
+                ) if item in dc.target_items and info["times"] > min_times}
+                if stage_dict:
+                    new_dict[stage] = stage_dict
+        # from formula, TODO: check correctness
+        new_dict = dict()
+        for k, v in dc.formula18.items():
+            new_dict[k] = v | {k: 1}
         # from __UPGRADE_ITEM_VALUE
         # TODO 0812: 建df方式
+        # TODO 0813: not yet done, check correctness
         return df
 
     def generate_future_activity_materials(self,
@@ -484,6 +515,7 @@ class DataCollector:
 
     @classmethod
     def _save_stage_map(cls):
+        # TODO: update stage_map add 永久、复刻 and check dependency `zone_matrix`
         try:
             logger.info(f"Download stage.json from {URL_STAGE}.")
             with requests.get(URL_STAGE) as response:
@@ -718,6 +750,9 @@ class DataCollector:
                 if "@" in name:
                     _id = "_".join(_id.split("_")[:3])
                     name = name.replace("@", "・永久@").split("@")[0].strip()
+                elif "sre" in _id and "复刻" not in name:
+                    _id = _id.strip()
+                    name = name.strip().replace("·", "・") + "・复刻"
                 else:
                     _id = _id.strip()
                     name = name.strip().replace("·", "・")
@@ -779,11 +814,12 @@ class DataCollector:
                 times = t["times"]
                 quantity = t["quantity"]
                 std_dev = t["stdDev"]
+                drop_rate = quantity / times  # actually expcted value of drops
 
                 if stage_id not in stage_id2matrix:
                     stage_id2matrix[stage_id] = dict()
                 stage_id2matrix[stage_id][item_name] = {
-                    "times": times, "quantity": quantity, "std_dev": std_dev}
+                    "drop_rate": drop_rate, "times": times, "quantity": quantity, "std_dev": std_dev}
 
             # STAGE
             with requests.get(URL_STAGE) as response:
@@ -891,6 +927,37 @@ class DataCollector:
             logger.exception(e)
             # return dict()
 
+    @classmethod
+    def _get_current_time(cls, time: datetime.datetime | str | int | None) -> int:  # in seconds
+        """Get `current time` in seconds, where `current time` is the corresponding time of CN server."""
+        match time:
+            case datetime.datetime():
+                return int(time.timestamp())
+            case str():
+                candidates_ratios = [(k, SequenceMatcher(k, time).ratio())
+                                     for k in cls.event_list]
+                candidates_ratios = [c for c in candidates_ratios if c[1] > 0.5].sort(
+                    key=lambda x: x[1], reverse=True)
+                if candidates_ratios:
+                    if candidates_ratios[0][1] == 1:
+                        return cls.event_list[candidates_ratios[0][0]]
+                    else:
+                        logger.warning(
+                            f"No matching event is found. Using {candidates_ratios[0][0]}. Candidates: {candidates_ratios[:3]}")
+                else:
+                    return pd.Timestamp(time, tz="Asia/Shanghai").value // int(1e9)
+
+            case int():
+                while time > 1e10:
+                    time //= 1000
+                    return time
+            case None:
+                time = pd.Timestamp("now", tz="Asia/Shanghai") - \
+                    pd.Timedelta(days=276.3)  # about 9.21 months
+                return time.value // int(1e9)
+            case _:
+                raise ValueError(f"{time} is not a valid time.")
+
     @staticmethod
     def add(d1, d2):
         d1 = d1.copy()
@@ -910,3 +977,11 @@ class DataCollector:
             else:
                 d1[k] = -v
         return d1
+
+    @staticmethod
+    def mul(d1, scalar):
+        return {k: v*scalar for k, v in d1.items()}
+
+    @staticmethod
+    def replace_2dot(s: str) -> str:
+        return s.replace(".", "・").replace("-", "・")

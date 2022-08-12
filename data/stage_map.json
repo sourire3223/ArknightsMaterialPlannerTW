@@ -2523,63 +2523,72 @@
   ],
   "DH-1": [
     "act12side_01",
-    "act12side_01_rep"
+    "act12side_01_rep",
+    "act12side_01_perm"
   ],
   "act12side_02": [
     "DH-2"
   ],
   "DH-2": [
     "act12side_02",
-    "act12side_02_rep"
+    "act12side_02_rep",
+    "act12side_02_perm"
   ],
   "act12side_03": [
     "DH-3"
   ],
   "DH-3": [
     "act12side_03",
-    "act12side_03_rep"
+    "act12side_03_rep",
+    "act12side_03_perm"
   ],
   "act12side_04": [
     "DH-4"
   ],
   "DH-4": [
     "act12side_04",
-    "act12side_04_rep"
+    "act12side_04_rep",
+    "act12side_04_perm"
   ],
   "act12side_05": [
     "DH-5"
   ],
   "DH-5": [
     "act12side_05",
-    "act12side_05_rep"
+    "act12side_05_rep",
+    "act12side_05_perm"
   ],
   "act12side_06": [
     "DH-6"
   ],
   "DH-6": [
     "act12side_06",
-    "act12side_06_rep"
+    "act12side_06_rep",
+    "act12side_06_perm"
   ],
   "act12side_07": [
     "DH-7"
   ],
   "DH-7": [
     "act12side_07",
-    "act12side_07_rep"
+    "act12side_07_rep",
+    "act12side_07_perm"
   ],
   "act12side_08": [
     "DH-8"
   ],
   "DH-8": [
     "act12side_08",
-    "act12side_08_rep"
+    "act12side_08_rep",
+    "act12side_08_perm"
   ],
   "act12side_09": [
     "DH-9"
   ],
   "DH-9": [
     "act12side_09",
-    "act12side_09_rep"
+    "act12side_09_rep",
+    "act12side_09_perm"
   ],
   "act12d0_01_perm": [
     "RI-1"
@@ -3700,5 +3709,86 @@
   ],
   "act12side_09_rep": [
     "DH-9"
+  ],
+  "act12side_01_perm": [
+    "DH-1"
+  ],
+  "act12side_02_perm": [
+    "DH-2"
+  ],
+  "act12side_03_perm": [
+    "DH-3"
+  ],
+  "act12side_04_perm": [
+    "DH-4"
+  ],
+  "act12side_05_perm": [
+    "DH-5"
+  ],
+  "act12side_06_perm": [
+    "DH-6"
+  ],
+  "act12side_07_perm": [
+    "DH-7"
+  ],
+  "act12side_08_perm": [
+    "DH-8"
+  ],
+  "act12side_09_perm": [
+    "DH-9"
+  ],
+  "act20side_01": [
+    "IC-1"
+  ],
+  "IC-1": [
+    "act20side_01"
+  ],
+  "act20side_02": [
+    "IC-2"
+  ],
+  "IC-2": [
+    "act20side_02"
+  ],
+  "act20side_03": [
+    "IC-3"
+  ],
+  "IC-3": [
+    "act20side_03"
+  ],
+  "act20side_04": [
+    "IC-4"
+  ],
+  "IC-4": [
+    "act20side_04"
+  ],
+  "act20side_05": [
+    "IC-5"
+  ],
+  "IC-5": [
+    "act20side_05"
+  ],
+  "act20side_06": [
+    "IC-6"
+  ],
+  "IC-6": [
+    "act20side_06"
+  ],
+  "act20side_07": [
+    "IC-7"
+  ],
+  "IC-7": [
+    "act20side_07"
+  ],
+  "act20side_08": [
+    "IC-8"
+  ],
+  "IC-8": [
+    "act20side_08"
+  ],
+  "act20side_09": [
+    "IC-9"
+  ],
+  "IC-9": [
+    "act20side_09"
   ]
 }
