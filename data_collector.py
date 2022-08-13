@@ -1,5 +1,6 @@
 import datetime
 import json
+from asyncio import events
 from dataclasses import dataclass
 from difflib import SequenceMatcher
 from os.path import isfile
@@ -85,6 +86,7 @@ class DataCollector:
 
     _target_items: None | dict = None
     _level: None | dict = None
+    _sanity: None | dict = None
 
     # def __init__(self, update: bool = False):
     #     self.item_map = self.load_item_map(update)
@@ -100,8 +102,11 @@ class DataCollector:
 
     #     self.operator_order = self.load_operator_order(update)
     #     self.LAST_OPERATOR_TIME = self.operator_order.pop('LAST_OPERATOR_TIME')
+
     @classmethod
     def update_all(cls) -> None:
+        cls.reset()
+
         thread_list = list()
         thread_list.append(Thread(target=cls._save_item_map))
         thread_list.append(Thread(target=cls._save_stage_map))
@@ -128,6 +133,8 @@ class DataCollector:
         t2.start()
         t1.join()
         t2.join()
+
+        cls
 
     @classmethod
     @property
@@ -285,7 +292,38 @@ class DataCollector:
         return cls._level
 
     @classmethod
-    def get_df_matrix(cls, formula: str | dict[str, dict[str, float]]) -> pd.DataFrame:
+    @property
+    def sanity(cls):
+        if cls._sanity == None:
+            cls._sanity = dict()
+            for zone, stage_info in cls.zone_matrix.items():
+                for stage, info in stage_info.info.items():
+                    if "・复刻" in zone:
+                        stage += "・复刻"
+                    elif "・永久" in zone:
+                        stage += "・永久"
+
+                    cls._sanity[stage] = info["sanity"]
+        return cls._sanity
+
+    @classmethod
+    def get_matrix_and_corrected_sanity(cls, formula: str | dict[str, dict[str, float]] = "18",
+                                        filter_stage: set | list = {},
+                                        filter_times: int = 1000,
+                                        filter_datetime: datetime.datetime | str | int | None = None) -> tuple[pd.DataFrame, pd.DataFrame]:
+        """get matrix to feed into material planner
+
+        Args:
+            formula (str | dict[str, dict[str, float]], optional): (builiding/workshop) material processing formula . Defaults to "18".
+            filter_stage (set | list, optional): stages to be ignored, please specify ".永久" (permernent, intermezzo, side story, or record restoration) or ".复刻" (re-??, second time) as suffix, e.g. {"OF-F4.永久"}. Defaults to set().
+            filter_times (int, optional): times of the operation (stage) played in penguin-stats. Defaults to 1000. # delta = 0.025, prob = 0.95 (single tail)
+            filter_datetime (datetime.datetime | str | int | None, optional): see _get_current_time for more info. Defaults to None.
+        Raises:
+            ValueError: formula not found.
+
+        Returns:
+            tuple[pd.DataFrame, pd.DataFrame]: matrix and sanity corrected by the value of 龙门币, 作战记录, 赤金
+        """
         match formula:
             case "18" | "fomula18":
                 formula = cls.formula18
@@ -299,28 +337,47 @@ class DataCollector:
                 raise ValueError(
                     f"formula must be '18', '20', 'Blemishine' or 'formula18', 'formula20', 'formulaBlemishine'or a dict, but {formula}"
                 )
-
+        filter_datetime = cls._get_current_time(filter_datetime)
+        used_stage_filter = list()
         df = pd.DataFrame(columns=cls.target_items.keys())
-        # from zone_matrix, TODO: check correctness
-        min_times = 1000  # delta = 0.025, prob = 0.95 (single tail)
-        new_dict = dict()
-        dc.zone_matrix.keys()
-        for zone, stage_matrix in dc.zone_matrix.items():
-            for stage, matrix in stage_matrix.items():
-                if "・复刻" in zone:
-                    stage += "・复刻"
-                elif "・永久" in zone:
-                    stage += "・永久"
 
-                stage_dict = {item: info["drop_rate"] for item, info in matrix["drop_info"].items(
-                ) if item in dc.target_items and info["times"] > min_times}
-                if stage_dict:
-                    new_dict[stage] = stage_dict
-        # from formula, TODO: check correctness
-        new_dict = dict()
-        for k, v in dc.formula18.items():
-            new_dict[k] = v | {k: 1}
+        # from zone_matrix
+        matrix_dict = dict()
+        if "*" not in filter_stage:
+            for zone, stage_matrix in cls.zone_matrix.items():
+                # WARNING: events and zones are not contsistent.
+                # filter_datetime
+                if zone in cls.event_list and cls.event_list[zone][1] < filter_datetime:
+                    continue
+                for stage, matrix in stage_matrix.items():
+                    if "・复刻" in zone:
+                        stage += "・复刻"
+                        dot_stage = stage + ".复刻"
+                    elif "・永久" in zone:
+                        stage += "・永久"
+                        dot_stage = stage + ".永久"
+
+                    # filter_stage
+                    if dot_stage in filter_stage:
+                        used_stage_filter.add(dot_stage)
+                        continue
+
+                    stage_dict = {item: info["drop_rate"]
+                                  for item, info in matrix["drop_info"].items()
+                                  if item in cls.target_items and info["times"] > filter_times}  # filter_times
+
+                    if stage_dict:
+                        matrix_dict[stage] = stage_dict
+
+        # from formula
+        formula_dict = dict()
+        for k, v in formula.items():
+            formula_dict[k] = v | {k: 1}
+
         # from __UPGRADE_ITEM_VALUE
+        upgrade_dict = dict()
+        for k, v in cls.__UPGRADE_ITEM_VALUE.items():
+            upgrade_dict[k] = 10
         # TODO 0812: 建df方式
         # TODO 0813: not yet done, check correctness
         return df
@@ -931,14 +988,21 @@ class DataCollector:
     @classmethod
     def _get_current_time(cls, time: datetime.datetime | str | int | None) -> int:  # in seconds
         """Get `current time` in seconds, where `current time` is the corresponding time of CN server."""
+
         match time:
             case datetime.datetime():
                 return int(time.timestamp())
             case str():
-                candidates_ratios = [(k, SequenceMatcher(k, time).ratio())
+                def sim(a: str, b: str, ignore: str = "") -> int:
+                    if not (a or b):
+                        return 0
+                    a, b = (set(a.translate({ord(c): None for c in ignore})),
+                            set(b.translate({ord(c): None for c in ignore})))
+                    return len(a & b) / len(a | b)
+                candidates_ratios = [(k, sim(k, time, ".-・"))
                                      for k in cls.event_list]
-                candidates_ratios = [c for c in candidates_ratios if c[1] > 0.5].sort(
-                    key=lambda x: x[1], reverse=True)
+                candidates_ratios = sorted(
+                    [c for c in candidates_ratios if c[1] > 0.249], key=lambda x: x[1], reverse=True)
                 if candidates_ratios:
                     if candidates_ratios[0][1] == 1:
                         return cls.event_list[candidates_ratios[0][0]]
@@ -958,6 +1022,10 @@ class DataCollector:
                 return time.value // int(1e9)
             case _:
                 raise ValueError(f"{time} is not a valid time.")
+
+    @classmethod
+    def reset(cls):
+        cls.__init__(cls)  # for dataclass
 
     @staticmethod
     def add(d1, d2):
@@ -985,4 +1053,4 @@ class DataCollector:
 
     @staticmethod
     def replace_2dot(s: str) -> str:
-        return s.replace(".", "・").replace("-", "・")
+        return s.replace(".", "・")
