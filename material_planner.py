@@ -14,5 +14,8 @@ class MaterialPlanner:
     def __init__(self, zone_matrix: dict = dict(), target_items: dict[str, str] = dict()):
         pass
 
-    def get_plan(required_dict=dict(), matrix_map=dict(), ) -> dict:
+    def get_plan():
+        pass
+
+    def fit(required_dict=dict(), matrix_map=dict(), ) -> dict:
         pass
